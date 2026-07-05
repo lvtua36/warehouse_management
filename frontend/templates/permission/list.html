@@ -1,0 +1,87 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}
+Permission List
+{% endblock %}
+
+{% block content %}
+
+<h2>Permission List</h2>
+
+<p>
+    <a href="/permissions/add">
+        Add Permission
+    </a>
+</p>
+
+<table border="1" cellpadding="10" cellspacing="0">
+
+    <thead>
+
+        <tr>
+
+            <th>ID</th>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Module</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Operation</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+    {% for permission in permissions %}
+
+        <tr>
+
+            <td>{{ permission.id }}</td>
+
+            <td>{{ permission.code }}</td>
+
+            <td>{{ permission.name }}</td>
+
+            <td>{{ permission.module }}</td>
+
+            <td>{{ permission.description }}</td>
+
+            <td>
+
+                {% if permission.status == 1 %}
+                    Active
+                {% else %}
+                    Inactive
+                {% endif %}
+
+            </td>
+
+            <td>
+
+                <a href="/permissions/edit/{{ permission.id }}">
+                    Edit
+                </a>
+
+                |
+
+                <a
+                    href="/permissions/delete/{{ permission.id }}"
+                    onclick="return confirm('Delete this permission?')">
+
+                    Delete
+
+                </a>
+
+            </td>
+
+        </tr>
+
+    {% endfor %}
+
+    </tbody>
+
+</table>
+
+{% endblock %}

@@ -1,0 +1,75 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}
+Role List
+{% endblock %}
+{% block content %}
+<h2>Role List</h2>
+
+<a href="/roles/add" class="btn btn-primary mb-3">
+    Add Role
+</a>
+
+<table border="1" cellpadding="10">
+
+    <thead>
+
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Operation</th>
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+    {% for role in roles %}
+
+        <tr>
+
+            <td>{{ role.id }}</td>
+
+            <td>{{ role.name }}</td>
+
+            <td>{{ role.description }}</td>
+
+            <td>
+
+                {% if role.status == 1 %}
+                    Active
+                {% else %}
+                    Disable
+                {% endif %}
+
+            </td>
+
+            <td>
+
+                <a href="/roles/edit/{{ role.id }}">
+                    Sửa
+                </a>
+
+                |
+
+                <a
+                    href="/roles/delete/{{ role.id }}"
+                    onclick="return confirm('Bạn có chắc chắn muốn xóa?')">
+
+                    Xóa
+
+                </a>
+
+            </td>
+
+        </tr>
+
+    {% endfor %}
+
+    </tbody>
+
+</table>
+
+{% endblock %}

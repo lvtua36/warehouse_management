@@ -1,6 +1,6 @@
 import pymysql
 
-from config import Config
+from app.config import Config
 
 class Database:
 
@@ -12,7 +12,8 @@ class Database:
             port=Config.MYSQL_PORT,
             user=Config.MYSQL_USER,
             password=Config.MYSQL_PASSWORD,
-            db=Config.MYSQL_DB,
+            database=Config.MYSQL_DATABASE,
+            charset="utf8mb4",
             cursorclass=pymysql.cursors.DictCursor,
             autocommit=True
         )

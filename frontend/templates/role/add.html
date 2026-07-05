@@ -1,0 +1,34 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}
+Add Role
+{% endblock %}
+
+{% block content %}
+
+<h2>Add Role</h2>
+
+<form method="POST">
+    <p>
+        <label>Role name</label>
+        <br>
+
+        <input type="text" name="name" required>
+    </p>
+
+    <p>
+        <label>Description</label>
+        <br>
+        <textarea name="description" rows="4"></textarea>
+    </p>
+
+    <button type="submit">Save Role</button>
+</form>
+
+<br>
+
+<a href="/roles">
+    Back to Role List
+</a>
+
+{% endblock %}

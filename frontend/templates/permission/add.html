@@ -1,0 +1,73 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}
+Add Permission
+{% endblock %}
+
+{% block content %}
+
+<h2>Add Permission</h2>
+
+<form method="POST">
+
+    <p>
+
+        <label>Code</label>
+
+        <br>
+
+        <input
+            type="text"
+            name="code"
+            required>
+
+    </p>
+
+    <p>
+
+        <label>Name</label>
+
+        <br>
+
+        <input
+            type="text"
+            name="name"
+            required>
+
+    </p>
+
+    <p>
+
+        <label>Module</label>
+
+        <br>
+
+        <input
+            type="text"
+            name="module"
+            required>
+
+    </p>
+
+    <p>
+
+        <label>Description</label>
+
+        <br>
+
+        <textarea
+            name="description"></textarea>
+
+    </p>
+
+    <button type="submit">
+        Save
+    </button>
+
+    <a href="/permissions">
+        Cancel
+    </a>
+
+</form>
+
+{% endblock %}

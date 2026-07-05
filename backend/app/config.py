@@ -11,7 +11,7 @@ class Config:
 
     MYSQL_PORT = int(os.getenv("MYSQL_PORT"))
 
-    MYSQL_DB = os.getenv("MYSQL_DATABASE")
+    MYSQL_DATABASE = os.getenv("MYSQL_DATABASE")
 
     MYSQL_USER = os.getenv("MYSQL_USER")
 
